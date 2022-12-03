@@ -1,5 +1,7 @@
 package days;
 
+import utils.Utils;
+
 import static days.Two.Option.A;
 import static days.Two.Option.B;
 import static days.Two.Option.C;
@@ -16,7 +18,7 @@ import java.util.ArrayList;
 public class Two {
 
   public int getAssumedScore() throws IOException {
-    ArrayList<String> lines = getLines();
+    ArrayList<String> lines = Utils.getLines("2.12.txt");
     int score = 0;
     for (String line : lines) {
       String[] parts = line.split(" ");
@@ -28,7 +30,7 @@ public class Two {
   }
 
   public int getRealScore() throws IOException {
-    ArrayList<String> lines = getLines();
+    ArrayList<String> lines = Utils.getLines("2.12.txt");
     int score = 0;
     for (String line : lines) {
       String[] parts = line.split(" ");
@@ -39,19 +41,6 @@ public class Two {
     }
     return score;
   }
-
-  private ArrayList<String> getLines() throws IOException {
-    ClassLoader classLoader = getClass().getClassLoader();
-    File file = new File(classLoader.getResource("2.12.txt").getFile());
-    BufferedReader br = new BufferedReader(new FileReader(file));
-    String strLine;
-    ArrayList<String> list = new ArrayList<>();
-    while ((strLine = br.readLine()) != null)   {
-      list.add(strLine);
-    }
-    return list;
-  }
-
 
   private Result getResult(Option opponent, Option my) {
     if (opponent == my) {
