@@ -1,9 +1,8 @@
-import days.Four;
+import days.Five;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        int[] numberOfRanges = new Four().getNumberOfRanges();
-        System.out.println(numberOfRanges[0]);
-        System.out.println(numberOfRanges[1]);
+        System.out.println(new Five().getTopCratesOld());
+        System.out.println(new Five().getTopCratesNew());
     }
 }
